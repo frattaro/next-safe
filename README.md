@@ -1,3 +1,7 @@
+This fork supports next 14, converts to typescript, gets test coverage up to 100%.
+
+It'll also error if you use `none` or `*` on a permissions-policy along with other values.
+
 <div align="center">
   <h1><code>next-safe</code></h1>
 </div>
@@ -13,24 +17,27 @@
 [![Maintainability][codeclimate-badge]][codeclimate]
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![PRs Welcome][prs-badge]][prs]
 [![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 [![Code of Conduct][code-of-conduct-badge]][code-of-conduct]
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
+
 <!-- [![Dependencies][daviddm-badge]][daviddm] -->
 
 `next-safe` helps secure your Next.js apps by providing sensible defaults for the most common security headers, including:
 
-* [`Content-Security-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
-* [`Permissions-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy) (formerly known as `Feature-Policy`)
-* [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
-* [`X-Content-Type-Options`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
-* [`X-Frame-Options`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)
-* [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
+- [`Content-Security-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+- [`Permissions-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy) (formerly known as `Feature-Policy`)
+- [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
+- [`X-Content-Type-Options`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
+- [`X-Frame-Options`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)
+- [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
 
 Check out the full documentation at [https://trezy.gitbook.io/next-safe](https://trezy.gitbook.io/next-safe).
 
@@ -59,10 +66,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome! Check out our [contributing docs](./CONTRIBUTING.md) for help getting started!
-
-
-
-
 
 [bundlephobia]: https://bundlephobia.com/package/next-safe
 [bundlephobia-badge]: https://img.shields.io/bundlephobia/minzip/next-safe?style=flat-square

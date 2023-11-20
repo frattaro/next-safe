@@ -1,13 +1,15 @@
 {
-  "name": "@frattaro/next-safe",
-  "version": "0.0.0-development",
-  "author": "Trezy <tre@trezy.com>",
+  "name": "next-safe-ts",
+  "version": "22.0.9",
+  "private": false,
+  "author": "Anton Frattaroli",
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rimraf dist",
+    "publish-package": "npm run clean && npm ci && npm run build && npm publish",
     "semantic-release": "semantic-release",
     "test": "jest --coverage"
   },
@@ -36,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trezy/next-safe.git"
+    "url": "https://github.com/frattaro/next-safe.git"
   },
   "dependencies": {
     "rimraf": "5.0.5"

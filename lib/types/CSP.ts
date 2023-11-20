@@ -1,4 +1,4 @@
-export type CSPDirective = string | string[];
+export type CSPDirective = string | string[] | false;
 
 export interface CSPConfig {
   "base-uri"?: CSPDirective;

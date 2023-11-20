@@ -1,6 +1,6 @@
 {
   "name": "next-safe-ts",
-  "version": "22.0.9",
+  "version": "22.0.10",
   "private": false,
   "author": "Anton Frattaroli",
   "license": "BSD-3-Clause",
@@ -32,6 +32,7 @@
     "eslint-plugin-prettier": "5.0.1",
     "jest": "29.7.0",
     "prettier": "3.1.0",
+    "rimraf": "5.0.5",
     "semantic-release": "22.0.8",
     "ts-jest": "29.1.1",
     "typescript": "5.2.2"
@@ -39,8 +40,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/frattaro/next-safe.git"
-  },
-  "dependencies": {
-    "rimraf": "5.0.5"
   }
 }

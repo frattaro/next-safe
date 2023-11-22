@@ -1,6 +1,6 @@
 ## Configuration
 
-`next-safe` allows you to configure every header that it generates. Most config options may be set to `false` to disable the feature. Here are the default values for all config options.
+`next-safe` allows you to configure every header that it generates. Config options may be set to `false` to remove the feature. Here are the default values for all config options.
 
 ```js
 nextSafe({
@@ -8,27 +8,30 @@ nextSafe({
   contentSecurityPolicy: {
     "base-uri": "'none'",
     "child-src": "'none'",
-    "connect-src": "'self'",
-    "default-src": "'self'",
-    "font-src": "'self'",
-    "form-action": "'self'",
+    "connect-src": "'none'",
+    "default-src": "'none'",
+    "font-src": "'none'",
+    "form-action": "'none'",
     "frame-ancestors": "'none'",
     "frame-src": "'none'",
-    "img-src": "'self'",
-    "manifest-src": "'self'",
-    "media-src": "'self'",
+    "img-src": "'none'",
+    "manifest-src": "'none'",
+    "media-src": "'none'",
     "object-src": "'none'",
-    "prefetch-src": "'self'",
-    "script-src": "'self'",
-    "style-src": "'self'",
-    "worker-src": "'self'",
+    "prefetch-src": "'none'",
+    "script-src": "'none'",
+    "style-src": "'none'",
+    "worker-src": "'none'",
     reportOnly: false
   },
   frameOptions: "DENY",
+  isDev: false,
   permissionsPolicy: {},
   permissionsPolicyDirectiveSupport: ["proposed", "standard"],
-  isDev: false,
   referrerPolicy: "no-referrer",
+  strictTransportSecurity: isDev
+    ? false
+    : "max-age=31536000; includeSubDomains; preload",
   xssProtection: "1; mode=block"
 });
 ```
@@ -41,4 +44,6 @@ For more information on each of these options, check out their documentation:
 - [`isDev`](./api/isDev.md)
 - [`permissionsPolicy`](./api/permissionsPolicy.md)
 - [`permissionsPolicyDirectiveSupport`](./api/permissionsPolicyDirectiveSupport.md)
+- [`referrerPolicy`](./api/referrerPolicy.md)
+- [`strictTransportSecurity`](./api/strictTransportSecurity.md)
 - [`xssProtection`](./api/xssProtection.md)

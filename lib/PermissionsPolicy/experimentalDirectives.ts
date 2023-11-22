@@ -1,13 +1,13 @@
 export const experimentalDirectives = [
+  "browsing-topics",
   "conversion-measurement",
   "focus-without-user-activation",
-  "hid",
-  "idle-detection",
-  "interest-cohort",
-  "serial",
+  "join-ad-interest-group",
+  "local-fonts",
+  "run-ad-auction",
   "sync-script",
   "trust-token-redemption",
   "unload",
-  "window-placement",
-  "vertical-scroll"
+  "vertical-scroll",
+  "window-placement"
 ];

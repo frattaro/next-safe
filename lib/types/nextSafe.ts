@@ -21,5 +21,6 @@ export interface NextSafeConfig {
   permissionsPolicyDirectiveSupport?: PermPolicyDirectiveList[];
   isDev?: boolean;
   referrerPolicy?: HeaderConfig;
+  strictTransportSecurity?: HeaderConfig;
   xssProtection?: HeaderConfig;
 }

@@ -7,32 +7,32 @@
 	contentSecurityPolicy: {
 		"base-uri": "'none'",
 		"child-src": "'none'",
-		"connect-src": "'self'",
-		"default-src": "'self'",
-		"font-src": "'self'",
-		"form-action": "'self'",
+		"connect-src": "'none'",
+		"default-src": "'none'",
+		"font-src": "'none'",
+		"form-action": "'none'",
 		"frame-ancestors": "'none'",
 		"frame-src": "'none'",
-		"img-src": "'self'",
-		"manifest-src": "'self'",
-		"media-src": "'self'",
+		"img-src": "'none'",
+		"manifest-src": "'none'",
+		"media-src": "'none'",
 		"object-src": "'none'",
-		"prefetch-src": "'self'",
-		"script-src": "'self'",
-		"style-src": "'self'",
-		"worker-src": "'self'",
+		"prefetch-src": "'none'",
+		"script-src": "'none'",
+		"style-src": "'none'",
+		"worker-src": "'none'"
 	},
 }
 ```
 
-Additionally, if `isDev` is set to `true`:
+Additionally, if `isDev` is set to `true`, the following values are merged in:
 
 ```js
 {
 	contentSecurityPolicy: {
 		"connect-src": "webpack://*",
 		"script-src": "'unsafe-eval'",
-		"style-src": "'unsafe-inline'",
+		"style-src": "'unsafe-inline'"
 	},
 }
 ```
@@ -83,12 +83,12 @@ Note that `'self'` is in quotes. This is a CSP thing and `next-safe` does not ha
 }
 ```
 
-#### Disable the `prefetch-src` directive
+#### Disable the `font-src` directive
 
 ```js
 {
 	contentSecurityPolicy: {
-		"prefetch-src": false,
+		"font-src": false,
 	},
 }
 ```

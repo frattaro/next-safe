@@ -1,5 +1,5 @@
 import { directives } from "./PermissionsPolicy";
-import { PermPolicyDirectiveList } from "./types/nextSafe";
+import { Header, PermPolicyDirectiveList } from "./types/nextSafe";
 
 function reduceDirectives(
   supportedDirectives: string[],
@@ -21,7 +21,7 @@ export function buildPermissionsPolicyHeaders({
 }: {
   permissionsPolicy?: false | Record<string, string | false>;
   permissionsPolicyDirectiveSupport?: PermPolicyDirectiveList[] | undefined;
-} = {}) {
+} = {}): Header[] {
   if (permissionsPolicy === false) {
     return [];
   }

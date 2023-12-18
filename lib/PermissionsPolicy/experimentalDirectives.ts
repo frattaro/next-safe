@@ -8,6 +8,5 @@ export const experimentalDirectives = [
   "sync-script",
   "trust-token-redemption",
   "unload",
-  "vertical-scroll",
-  "window-placement"
+  "vertical-scroll"
 ];

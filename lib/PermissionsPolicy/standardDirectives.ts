@@ -38,5 +38,6 @@ export const standardDirectives = [
   "sync-xhr",
   "usb",
   "web-share",
+  "window-management",
   "xr-spatial-tracking"
 ];

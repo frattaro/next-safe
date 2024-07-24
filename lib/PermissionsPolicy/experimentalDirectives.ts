@@ -1,4 +1,5 @@
 export const experimentalDirectives = [
+  "all-screens-capture",
   "browsing-topics",
   "conversion-measurement",
   "focus-without-user-activation",

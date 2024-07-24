@@ -31,8 +31,7 @@ nextSafe({
   referrerPolicy: "no-referrer",
   strictTransportSecurity: isDev
     ? false
-    : "max-age=31536000; includeSubDomains; preload",
-  xssProtection: "1; mode=block"
+    : "max-age=31536000; includeSubDomains; preload"
 });
 ```
 
@@ -46,4 +45,3 @@ For more information on each of these options, check out their documentation:
 - [`permissionsPolicyDirectiveSupport`](./api/permissionsPolicyDirectiveSupport.md)
 - [`referrerPolicy`](./api/referrerPolicy.md)
 - [`strictTransportSecurity`](./api/strictTransportSecurity.md)
-- [`xssProtection`](./api/xssProtection.md)

@@ -36,10 +36,6 @@ describe("nextSafe", () => {
       {
         key: "X-Frame-Options",
         value: "DENY"
-      },
-      {
-        key: "X-XSS-Protection",
-        value: "1; mode=block"
       }
     ]);
   });
@@ -51,8 +47,7 @@ describe("nextSafe", () => {
       referrerPolicy: false,
       strictTransportSecurity: false,
       contentTypeOptions: false,
-      frameOptions: false,
-      xssProtection: false
+      frameOptions: false
     });
     expect(headers).toEqual([]);
   });
@@ -64,7 +59,6 @@ describe("nextSafe", () => {
       referrerPolicy: false,
       contentTypeOptions: false,
       frameOptions: false,
-      xssProtection: false,
       isDev: true
     });
     expect(headers).toEqual([]);

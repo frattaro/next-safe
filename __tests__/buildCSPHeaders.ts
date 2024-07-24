@@ -6,7 +6,7 @@ describe("buildCSPHeaders", () => {
   function testCSPWithConfig(
     testName: string,
     expectedCsp: string = "",
-    config?: any
+    config?: Parameters<typeof buildCSPHeaders>[0]
   ) {
     test(testName, () => {
       const builtCSPHeaders = buildCSPHeaders(config);

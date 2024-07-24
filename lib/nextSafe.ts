@@ -26,8 +26,7 @@ export function nextSafe(options: NextSafeConfig = {}): Header[] {
     permissionsPolicyDirectiveSupport,
     isDev = false,
     referrerPolicy,
-    strictTransportSecurity,
-    xssProtection
+    strictTransportSecurity
   } = options;
 
   return [
@@ -43,7 +42,9 @@ export function nextSafe(options: NextSafeConfig = {}): Header[] {
       isDev ? "" : "max-age=31536000; includeSubDomains; preload"
     ),
     makeHeaderObj("X-Content-Type-Options", contentTypeOptions, "nosniff"),
-    makeHeaderObj("X-Frame-Options", frameOptions, "DENY"),
-    makeHeaderObj("X-XSS-Protection", xssProtection, "1; mode=block")
-  ].filter((x) => x && x.value); // Filter out header values that have resolved to falsy
+    makeHeaderObj("X-Frame-Options", frameOptions, "DENY")
+  ].reduce<Header[]>((a, x) => {
+    x && x.value && a.push(x); // Filter out header values that have resolved to falsy
+    return a;
+  }, []);
 }

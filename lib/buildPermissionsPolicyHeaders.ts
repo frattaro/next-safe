@@ -60,7 +60,7 @@ export function buildPermissionsPolicyHeaders({
       value: Object.entries(permissionsPolicyDirectives)
         .reduce<string[]>((accumulator, [key, value]) => {
           const serializedValues = value
-            .replace(/  /g, " ")
+            .replace(/ {2}/g, " ")
             .split(" ")
             .map((item) => {
               const quotelessValue = item

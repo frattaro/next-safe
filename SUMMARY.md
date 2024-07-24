@@ -16,7 +16,6 @@
 - [`isDev`](./docs/api/isDev.md)
 - [`permissionsPolicy`](./docs/api/permissionsPolicy.md)
 - [`permissionsPolicyDirectiveSupport`](./docs/api/permissionsPolicyDirectiveSupport.md)
-- [`xssProtection`](./docs/api/xssProtection.md)
 
 ## Other Important Stuff
 

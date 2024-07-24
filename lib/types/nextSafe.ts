@@ -22,5 +22,4 @@ export interface NextSafeConfig {
   isDev?: boolean;
   referrerPolicy?: HeaderConfig;
   strictTransportSecurity?: HeaderConfig;
-  xssProtection?: HeaderConfig;
 }

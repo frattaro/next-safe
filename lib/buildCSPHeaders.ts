@@ -1,7 +1,7 @@
-import { CSPConfig, CSPDirective } from "./types/CSP";
+import { CSPConfig } from "./types/CSP";
 import { Header } from "./types/nextSafe";
 
-const defaultCsp = {
+const defaultCsp: Record<keyof Omit<CSPConfig, "reportOnly">, string[]> = {
   "base-uri": ["'none'"],
   "child-src": ["'none'"],
   "connect-src": ["'none'"],
@@ -36,14 +36,16 @@ const defaultCsp = {
   "upgrade-insecure-requests": []
 };
 
-const devDirectives = {
+const devDirectives: Partial<typeof defaultCsp> = {
   "connect-src": ["webpack://*"],
   "script-src": ["'unsafe-eval'"],
   "style-src": ["'unsafe-inline'"]
 };
 
-const cleanDirective = (directive: CSPDirective): string[] => {
-  if (directive === false) return [];
+const cleanDirective = (
+  directive: CSPConfig[keyof typeof defaultCsp]
+): string[] => {
+  if (!directive) return [];
 
   if (Array.isArray(directive))
     return directive.map((x) => x.trim()).filter(Boolean);
@@ -66,17 +68,20 @@ export function buildCSPHeaders({
   }
 
   // modify default CSP with configured values
-  const directives = Object.keys(defaultCsp).reduce<Record<string, string[]>>(
+  const directives = Object.keys(defaultCsp).reduce<typeof defaultCsp>(
     (acc, x) => {
       if (x in contentSecurityPolicy) {
-        acc[x] = cleanDirective(contentSecurityPolicy[x]);
+        const value: CSPConfig[keyof typeof defaultCsp] =
+          contentSecurityPolicy[x];
+        acc[x] = cleanDirective(value);
       }
 
       // concatenate development directives
       if (isDev) {
         if (x in devDirectives) {
+          const value: string[] = devDirectives[x];
           acc[x] = acc[x]
-            .concat(cleanDirective(devDirectives[x]))
+            .concat(cleanDirective(value))
             .filter((y) => y !== "'none'");
         }
       }
@@ -95,16 +100,13 @@ export function buildCSPHeaders({
   directives["report-uri"] = reportDirectiveValue;
   directives["report-to"] = reportDirectiveValue;
 
-  // remove empty directives
-  Object.entries(directives).forEach(([key, value]) => {
-    if (!value.length) {
-      delete directives[key];
-    }
-  });
-
   const cspString = Object.entries(directives).reduce(
     (accumulator, [key, value]) => {
-      return `${accumulator}${key} ${[...new Set(value)].join(" ")};`;
+      if (value.length) {
+        return `${accumulator}${key} ${[...new Set(value)].join(" ")};`;
+      }
+
+      return accumulator;
     },
     ""
   );

@@ -44,7 +44,7 @@ export function nextSafe(options: NextSafeConfig = {}): Header[] {
     makeHeaderObj("X-Content-Type-Options", contentTypeOptions, "nosniff"),
     makeHeaderObj("X-Frame-Options", frameOptions, "DENY")
   ].reduce<Header[]>((a, x) => {
-    x && x.value && a.push(x); // Filter out header values that have resolved to falsy
+    if (x?.value) a.push(x); // Filter out header values that have resolved to falsy
     return a;
   }, []);
 }

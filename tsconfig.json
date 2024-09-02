@@ -11,5 +11,5 @@
     "declaration": true,
     "strictNullChecks": true
   },
-  "include": ["./lib/**/*", "__tests__/**/*"]
+  "include": ["./lib/**/*", "tests/**/*"]
 }

@@ -6,13 +6,7 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: [
-      "dist/",
-      "eslint.config.mjs",
-      "babel.config.js",
-      ".prettierrc.js",
-      "coverage/"
-    ]
+    ignores: ["dist/", "eslint.config.mjs", ".prettierrc.js", "coverage/"]
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,

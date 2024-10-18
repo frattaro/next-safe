@@ -10,13 +10,6 @@ export default tseslint.config(
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  {
-    languageOptions: {
-      parserOptions: {
-        project: "./tsconfig.json"
-      }
-    }
-  },
   pluginSecurity.configs.recommended,
   eslintConfigPrettier,
   eslintPluginPrettierRecommended,

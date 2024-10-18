@@ -10,9 +10,11 @@ updates:
     schedule:
       interval: "daily"
     groups:
-      typescript-eslint:
+      vite:
         patterns:
-          - "@typescript-eslint/*"
+          - "@vitest/*"
+          - "vitest"
+          - "vite"
       types:
         patterns:
           - "@types/*"

@@ -1,1 +1,1 @@
-export const legacyDirectives = ["document-domain"];
+export const legacyDirectives = ["document-domain", "window-placement"];

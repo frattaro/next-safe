@@ -9,6 +9,9 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "@types/node"
+        versions: [">=24.0.0"]
     groups:
       vite:
         patterns:

@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "6.0.2",
-    "@types/node": "22.19.8",
+    "@types/node": "22.19.9",
     "@vitest/coverage-v8": "4.0.18",
     "eslint": "9.39.2",
     "eslint-config-prettier": "10.1.8",

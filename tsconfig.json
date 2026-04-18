@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2023",
     "allowJs": true,
     "skipLibCheck": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "outDir": "dist",
     "declaration": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "rootDir": "."
   },
   "include": ["./lib/**/*", "./tests/**/*"]
 }

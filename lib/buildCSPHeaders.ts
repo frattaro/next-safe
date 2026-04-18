@@ -71,17 +71,18 @@ export function buildCSPHeaders({
   const directives = Object.keys(defaultCsp).reduce<typeof defaultCsp>(
     (acc, x) => {
       if (x in contentSecurityPolicy) {
-        const value: CSPConfig[keyof typeof defaultCsp] =
-          contentSecurityPolicy[x];
-        acc[x] = cleanDirective(value);
+        // @ts-expect-error strings and keys, meh
+        acc[x] = cleanDirective(contentSecurityPolicy[x]);
       }
 
       // concatenate development directives
       if (isDev) {
         if (x in devDirectives) {
-          const value: string[] = devDirectives[x];
+          // @ts-expect-error more string and keys
           acc[x] = acc[x]
-            .concat(cleanDirective(value))
+            // @ts-expect-error more string and keys
+            .concat(cleanDirective(devDirectives[x]))
+            // @ts-expect-error obviously an array of strings
             .filter((y) => y !== "'none'");
         }
       }

@@ -79,10 +79,11 @@ export function buildCSPHeaders({
       if (isDev) {
         if (x in devDirectives) {
           // @ts-expect-error more string and keys
-          acc[x] = acc[x].concat(
+          acc[x] = acc[x]
             // @ts-expect-error more string and keys
-            cleanDirective(devDirectives[x]).filter((y) => y !== "'none'")
-          );
+            .concat(cleanDirective(devDirectives[x]))
+            // @ts-expect-error obviously an array of strings
+            .filter((y) => y !== "'none'");
         }
       }
 

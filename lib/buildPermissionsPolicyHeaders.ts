@@ -6,13 +6,16 @@ function reduceDirectives(
   permissionsPolicy: Record<string, string | false>,
   defaultValue: string
 ): Record<string, string> {
-  return supportedDirectives.reduce((accumulator, directive) => {
-    if (permissionsPolicy[directive] !== false) {
-      accumulator[directive] = permissionsPolicy[directive] || defaultValue;
-    }
+  return supportedDirectives.reduce<Record<string, string>>(
+    (accumulator, directive) => {
+      if (permissionsPolicy[directive] !== false) {
+        accumulator[directive] = permissionsPolicy[directive] || defaultValue;
+      }
 
-    return accumulator;
-  }, {});
+      return accumulator;
+    },
+    {}
+  );
 }
 
 export function buildPermissionsPolicyHeaders({

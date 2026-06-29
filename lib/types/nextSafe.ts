@@ -8,10 +8,7 @@ export interface Header {
 export type HeaderConfig = string | false;
 
 export type PermPolicyDirectiveList =
-  | "experimental"
-  | "legacy"
-  | "proposed"
-  | "standard";
+  "experimental" | "legacy" | "proposed" | "standard";
 
 export interface NextSafeConfig {
   contentTypeOptions?: HeaderConfig;

@@ -8,11 +8,6 @@ describe("buildPermissionsPolicyHeaders", () => {
 
     expect(result).toEqual([
       {
-        key: "Feature-Policy",
-        value:
-          "autofill 'none';clipboard-read 'none';clipboard-write 'none';deferred-fetch 'none';gamepad 'none';language-detector 'none';language-model 'none';manual-text 'none';rewriter 'none';speaker-selection 'none';summarizer 'none';translator 'none';writer 'none';accelerometer 'none';ambient-light-sensor 'none';attribution-reporting 'none';autoplay 'none';battery 'none';bluetooth 'none';camera 'none';ch-ua 'none';ch-ua-arch 'none';ch-ua-bitness 'none';ch-ua-full-version 'none';ch-ua-full-version-list 'none';ch-ua-high-entropy-values 'none';ch-ua-mobile 'none';ch-ua-model 'none';ch-ua-platform 'none';ch-ua-platform-version 'none';ch-ua-wow64 'none';compute-pressure 'none';cross-origin-isolated 'none';direct-sockets 'none';display-capture 'none';encrypted-media 'none';execution-while-not-rendered 'none';execution-while-out-of-viewport 'none';fullscreen 'none';geolocation 'none';gyroscope 'none';hid 'none';identity-credentials-get 'none';idle-detection 'none';keyboard-map 'none';magnetometer 'none';mediasession 'none';microphone 'none';midi 'none';navigation-override 'none';otp-credentials 'none';payment 'none';picture-in-picture 'none';publickey-credentials-get 'none';screen-wake-lock 'none';serial 'none';sync-xhr 'none';storage-access 'none';tools 'none';usb 'none';web-share 'none';window-management 'none';xr-spatial-tracking 'none';"
-      },
-      {
         key: "Permissions-Policy",
         value:
           "autofill=(),clipboard-read=(),clipboard-write=(),deferred-fetch=(),gamepad=(),language-detector=(),language-model=(),manual-text=(),rewriter=(),speaker-selection=(),summarizer=(),translator=(),writer=(),accelerometer=(),ambient-light-sensor=(),attribution-reporting=(),autoplay=(),battery=(),bluetooth=(),camera=(),ch-ua=(),ch-ua-arch=(),ch-ua-bitness=(),ch-ua-full-version=(),ch-ua-full-version-list=(),ch-ua-high-entropy-values=(),ch-ua-mobile=(),ch-ua-model=(),ch-ua-platform=(),ch-ua-platform-version=(),ch-ua-wow64=(),compute-pressure=(),cross-origin-isolated=(),direct-sockets=(),display-capture=(),encrypted-media=(),execution-while-not-rendered=(),execution-while-out-of-viewport=(),fullscreen=(),geolocation=(),gyroscope=(),hid=(),identity-credentials-get=(),idle-detection=(),keyboard-map=(),magnetometer=(),mediasession=(),microphone=(),midi=(),navigation-override=(),otp-credentials=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),storage-access=(),tools=(),usb=(),web-share=(),window-management=(),xr-spatial-tracking=()"
@@ -34,11 +29,6 @@ describe("buildPermissionsPolicyHeaders", () => {
     });
 
     expect(result).toEqual([
-      {
-        key: "Feature-Policy",
-        value:
-          "autofill 'none';clipboard-read 'none';clipboard-write 'none';deferred-fetch 'none';gamepad 'none';language-detector 'none';language-model 'none';manual-text 'none';rewriter 'none';speaker-selection 'none';summarizer 'none';translator 'none';writer 'none';accelerometer 'none';ambient-light-sensor 'none';attribution-reporting 'none';autoplay 'none';battery https://trezy.dev;bluetooth 'none';camera 'none';ch-ua 'none';ch-ua-arch 'none';ch-ua-bitness 'none';ch-ua-full-version 'none';ch-ua-full-version-list 'none';ch-ua-high-entropy-values 'none';ch-ua-mobile 'none';ch-ua-model 'none';ch-ua-platform 'none';ch-ua-platform-version 'none';ch-ua-wow64 'none';compute-pressure 'none';cross-origin-isolated 'none';direct-sockets 'none';display-capture 'none';encrypted-media 'none';execution-while-not-rendered 'none';execution-while-out-of-viewport 'none';fullscreen 'none';geolocation 'none';gyroscope *;hid 'none';identity-credentials-get 'none';idle-detection 'none';keyboard-map 'none';magnetometer 'none';mediasession 'none';microphone 'none';midi 'none';navigation-override 'none';otp-credentials 'none';payment 'none';picture-in-picture 'none';publickey-credentials-get 'none';screen-wake-lock 'none';serial 'none';sync-xhr 'none';storage-access 'none';tools 'none';usb 'none';web-share 'none';window-management 'none';xr-spatial-tracking 'none';all-screens-capture 'none';browsing-topics 'none';captured-surface-control 'none';conversion-measurement 'none';digital-credentials-create 'none';digital-credentials-get 'none';focus-without-user-activation 'none';join-ad-interest-group 'none';local-fonts 'none';monetization 'none';run-ad-auction 'none';smart-card 'none';sync-script 'none';trust-token-redemption 'none';unload 'none';vertical-scroll 'none';"
-      },
       {
         key: "Permissions-Policy",
         value:
@@ -64,11 +54,6 @@ describe("buildPermissionsPolicyHeaders", () => {
     });
 
     expect(result).toEqual([
-      {
-        key: "Feature-Policy",
-        value:
-          "autofill 'none';clipboard-read 'none';clipboard-write 'none';deferred-fetch 'none';gamepad 'none';language-detector 'none';language-model 'none';manual-text 'none';rewriter 'none';speaker-selection 'none';summarizer 'none';translator 'none';writer 'none';accelerometer 'none';ambient-light-sensor 'none';attribution-reporting 'none';autoplay 'none';battery 'none';bluetooth 'none';camera 'none';ch-ua 'none';ch-ua-arch 'none';ch-ua-bitness 'none';ch-ua-full-version 'none';ch-ua-full-version-list 'none';ch-ua-high-entropy-values 'none';ch-ua-mobile 'none';ch-ua-model 'none';ch-ua-platform 'none';ch-ua-platform-version 'none';ch-ua-wow64 'none';compute-pressure 'none';cross-origin-isolated 'none';direct-sockets 'none';display-capture 'none';encrypted-media 'none';execution-while-not-rendered 'none';execution-while-out-of-viewport 'none';fullscreen 'none';geolocation 'none';gyroscope 'self';hid 'none';identity-credentials-get 'none';idle-detection 'none';keyboard-map 'none';magnetometer 'none';mediasession 'none';microphone 'none';midi 'none';navigation-override 'none';otp-credentials 'none';payment 'none';picture-in-picture 'none';publickey-credentials-get 'none';screen-wake-lock 'none';serial 'none';sync-xhr 'none';storage-access 'none';tools 'none';usb 'none';web-share 'none';window-management 'none';xr-spatial-tracking 'none';"
-      },
       {
         key: "Permissions-Policy",
         value:

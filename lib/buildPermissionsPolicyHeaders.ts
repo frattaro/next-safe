@@ -37,11 +37,6 @@ export function buildPermissionsPolicyHeaders({
     )
   );
 
-  const featurePolicyDirectives = reduceDirectives(
-    supportedDirectives,
-    permissionsPolicy,
-    "'none'"
-  );
   const permissionsPolicyDirectives = reduceDirectives(
     supportedDirectives,
     permissionsPolicy,
@@ -49,15 +44,6 @@ export function buildPermissionsPolicyHeaders({
   );
 
   return [
-    {
-      key: "Feature-Policy",
-      value: Object.entries(featurePolicyDirectives).reduce(
-        (accumulator, [key, value]) => {
-          return `${accumulator}${key} ${value};`;
-        },
-        ""
-      )
-    },
     {
       key: "Permissions-Policy",
       value: Object.entries(permissionsPolicyDirectives)

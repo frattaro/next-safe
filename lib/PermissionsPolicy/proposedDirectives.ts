@@ -1,14 +1,15 @@
 export const proposedDirectives = [
+  "autofill",
   "clipboard-read",
   "clipboard-write",
   "deferred-fetch",
   "gamepad",
   "language-detector",
   "language-model",
+  "manual-text",
   "rewriter",
-  "summarizer",
-  "shared-autofill",
   "speaker-selection",
+  "summarizer",
   "translator",
   "writer"
 ];

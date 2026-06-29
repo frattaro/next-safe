@@ -44,6 +44,7 @@ export const standardDirectives = [
   "serial",
   "sync-xhr",
   "storage-access",
+  "tools",
   "usb",
   "web-share",
   "window-management",

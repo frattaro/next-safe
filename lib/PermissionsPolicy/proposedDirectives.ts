@@ -4,6 +4,7 @@ export const proposedDirectives = [
   "clipboard-write",
   "deferred-fetch",
   "gamepad",
+  "haptics",
   "language-detector",
   "language-model",
   "manual-text",
